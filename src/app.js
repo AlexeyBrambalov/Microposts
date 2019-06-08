@@ -1,10 +1,42 @@
-const greeting = 'Hello World';
-console.log(greeting);
+import { http } from "./http";
+import { ui } from "./ui";
 
-const getData = async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  console.log(result);
-};
+//Get posts on DOM load
 
-getData('https://jsonplaceholder.typicode.com/posts');
+document.addEventListener("DOMContentLoaded", getPosts);
+
+//Listen for add post
+document.querySelector(".post-submit").addEventListener("click", submitPost);
+
+//Get post
+
+function getPosts() {
+  http
+    //.get("http://localhost:3000/posts")
+    .get("https://fake2.p.rapidapi.com")
+    .then(data => ui.showPosts(data))
+    .catch(err => console.log(err));
+}
+
+//Submit post
+
+function submitPost() {
+  const title = document.querySelector("#title").value;
+  const body = document.querySelector("#body").value;
+
+  const data = {
+    title,
+    body
+  };
+
+  //Create post
+  http
+    //.post("http://localhost:3000/posts", data)
+    .post("https://fake2.p.rapidapi.com", data)
+    .then(data => {
+      ui.showAlert("Post added", "alert alert-success");
+      ui.clearFields();
+      getPosts();
+    })
+    .catch(err => console.log(err));
+}

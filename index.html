@@ -14,6 +14,7 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>My JavaScript App</title>
   </head>
   <body>
@@ -35,7 +36,11 @@
           />
         </div>
         <div class="form-group">
-          <textarea class="form-control" placeholder="Post Body"></textarea>
+          <textarea
+            class="form-control"
+            id="body"
+            placeholder="Post Body"
+          ></textarea>
         </div>
         <input type="hidden" id="id" value="" />
         <button class="post-submit btn btn-primary btn-block">Post It</button>
