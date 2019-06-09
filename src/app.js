@@ -22,7 +22,7 @@ document.querySelector(".card-form").addEventListener("click", cancelEdit);
 function getPosts() {
   http
     //.get("http://localhost:3000/posts")
-    .get("https://fake2.p.rapidapi.com")
+    .get("https://fake2.p.rapidapi.com/")
     .then(data => ui.showPosts(data))
     .catch(err => console.log(err));
 }

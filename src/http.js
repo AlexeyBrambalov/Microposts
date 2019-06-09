@@ -11,14 +11,13 @@
 class EasyHTTP {
   // Make an HTTP GET Request
   async get(url) {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-        "X-RapidAPI-Host": "fake2.p.rapidapi.com",
-        "X-RapidAPI-Key": "393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee"
-      }
-    });
+      const response = await fetch(url, {
+          method: "GET",
+          headers: {
+              "X-RapidAPI-Host": "fake2.p.rapidapi.com",
+            "X-RapidAPI-Key":"393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee",
+              "Content-type": "application/json"
+          },);
     const resData = await response.json();
     return resData;
   }
@@ -29,8 +28,6 @@ class EasyHTTP {
       method: "POST",
       headers: {
         "Content-type": "application/json"
-        // "X-RapidAPI-Host": "fake2.p.rapidapi.com",
-        // "X-RapidAPI-Key": "393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee"
       },
       body: JSON.stringify(data)
     });
@@ -65,6 +62,8 @@ class EasyHTTP {
     const resData = await "Resource Deleted...";
     return resData;
   }
+
+  
 }
 
 export const http = new EasyHTTP();
