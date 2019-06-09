@@ -14,7 +14,7 @@ class EasyHTTP {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        // "Content-type": "application/json",
+        "Content-type": "application/json",
         "X-RapidAPI-Host": "fake2.p.rapidapi.com",
         "X-RapidAPI-Key": "393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee"
       }
@@ -28,9 +28,9 @@ class EasyHTTP {
     const response = await fetch(url, {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
-        "X-RapidAPI-Host": "fake2.p.rapidapi.com",
-        "X-RapidAPI-Key": "393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee"
+        "Content-type": "application/json"
+        // "X-RapidAPI-Host": "fake2.p.rapidapi.com",
+        // "X-RapidAPI-Key": "393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee"
       },
       body: JSON.stringify(data)
     });
