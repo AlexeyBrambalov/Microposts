@@ -12,9 +12,9 @@ class EasyHTTP {
   // Make an HTTP GET Request
   async get(url) {
     const response = await fetch(url, {
-      method: "POST",
+      method: "GET",
       headers: {
-        "Content-type": "application/json",
+        // "Content-type": "application/json",
         "X-RapidAPI-Host": "fake2.p.rapidapi.com",
         "X-RapidAPI-Key": "393675a3e1msh559343419e5c04ep16f5cejsn8f97ec3852ee"
       }
